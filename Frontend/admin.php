@@ -86,28 +86,68 @@
                 <div class="col-5 text-center p-3 my-auto fs-2" id="summary-idag">
 					<!-- Kod för dag -->
 					<?php
-				        include "../Backend/getSummary.php";  
+				        include "../Backend/getSummary.php"; 
                     ?>
-					 <!-- <div class='mb-4'>
-						<h4>Idag</h4>
-					</div>
-                    <div class='mb-4'>
-						<h3>Summa: 45 kr</h3>
-                        <p>Swish: 12 kr</p>
-                        <p>Kontanter: 34 kr</p>
-					</div> -->
-					
+					<!--Kod från rapport sidan-->
+					<?php /*
+                        include "../Backend/databaseHandler.php";
+                        $totalamounttodayq = "select SUM(Total_Sum) from Payment where date(payment_date) = CURDATE()";
+                        $totalamountdayswishq = "select SUM(Total_Sum) from Payment where date(payment_date) = CURDATE() and payment_method = 'Swish'";
+                        $totalamountdaykontantq = "select SUM(Total_Sum) from Payment where date(payment_date) = CURDATE() and payment_method = 'Kontant'";
+                       try {
+                            function getDailySum($date,$paymentMethod,$getdailySum=false){
+                             $sqlGetReport = "select SUM(Total_Sum) from Payment where date(payment_date) = CURDATE()";
+                                if($getdailySum ==false){
+                                   $sqlGetReport = $sqlGetReport." AND payment_method = '$paymentMethod'";
+                                }
+                            $sqlGetReport = DatabaseHandler::fetchData($sqlGetReport,DatabaseHandler::dbconnect());
+                            return (mysqli_fetch_assoc($sqlGetReport)['SUM(Total_Sum)']); 
+                        }
+                            $totalSum = getDailySum("payment_date","",true); 
+                            $amountCash = getDailySum('payment_date','Kontant',false);
+                              if($amountCash == ""){
+                                $amountCash = "0";
+                            }
+                            $amountSwish = getDailySum('payment_date','Swish',false);
+                            echo "<div class='mb-4'><h2>Idag</h2></div>"
+                            ."<div class='mb-4'><h1>Summa: ".$totalSum." kr</h1>"
+                            ."<p>Swish: ".$amountSwish." kr</p>"
+                            ."<p>Kontanter: ".$amountCash." kr</p></div>";
+                       } catch (\Throwable $th) {
+                           console($th->getMessage());
+                           console($th->getLine());
+                       }
+                            */
+                    ?>
 				</div>
                 <div class="col-5 text-center p-3 my-auto fs-2" id="summary-manad">
 					<!--Kod för månad-->
-					<div class='mb-4'>
-						<h4>Månad</h4>
-					</div>
-                    <div class='mb-4'>
-						<h3>Summa: 45 kr</h3>
-                        <p>Swish: 12 kr</p>
-                        <p>Kontanter: 34 kr</p>
-					</div>
+
+					<!--Kod från rapport sidan-->
+					<?php
+                        /*try {
+                            function getsummary($month,$paymentMethod,$getMonthlySum){
+                                $sqlGetReport = "SELECT SUM(Total_Sum) FROM Payment WHERE monthname($month) = MONTHNAME(CURRENT_DATE) ";
+                                if($getMonthlySum ==false){
+                                   $sqlGetReport = $sqlGetReport." AND payment_method = '$paymentMethod'";
+                                }
+                            $sqlGetReport = DatabaseHandler::fetchData($sqlGetReport,DatabaseHandler::dbconnect());
+                            return (mysqli_fetch_assoc($sqlGetReport)['SUM(Total_Sum)']); 
+                           }
+                        $totalSuma = getsummary("payment_date","",true);
+                        $amountCash = getsummary('payment_date','Kontant',false);
+                        $amountSwisha = getsummary('payment_date','Swish',false);
+                      
+                        echo "<div class='mb-4'><h2>Denna månad</h2></div>"
+                        ."<div class='mb-4'><h1>Summa: ".$totalSuma." kr</h1>"
+                        ."<p>Swish: ".$amountSwisha." kr</p>"
+                        ."<p>Kontanter: ".$amountCash." kr</p></div>";
+                        }
+                        catch (\Throwable $th) {
+                            console($th->getMessage());
+                            console($th->getLine());
+                        }    */                 
+                    ?>
 				</div>
 			</div>
 		</a>

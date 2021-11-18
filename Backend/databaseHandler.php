@@ -16,6 +16,7 @@
         //create a secure database connection
         public static function dbconnect(){
             include "../Backend/secret.php";
+            
             try{
                 $connection=mysqli_connect($server, $username, $password, $dbname, $port);
                 if(!$connection){

@@ -19,9 +19,11 @@
                     <li class='nav-item nav-text'>
                         <a class='nav-link text-white m-3 mr-5' href='rapport.php'>Rapport</a>
                     </li>
+                    <!--
                     <li class='nav-item nav-text'>
-                    <a class='nav-link text-white m-3 mr-5' href='checkout.php'><i class='fa fa-cart-plus' aria-hidden='true'></i></a>
-                </li>
+                        <a class='nav-link text-white m-3 mr-5' href='checkout.php'><i class='fa fa-cart-plus' aria-hidden='true'></i></a>
+                    </li>
+                    -->
                 </ul> 
             </nav> 
         </div>"
