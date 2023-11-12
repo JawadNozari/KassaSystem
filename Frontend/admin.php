@@ -58,7 +58,8 @@
                     		</tr>
                 		</thead>
                 		<?php
-                    		include "../Backend/secret.php";
+                    		include "../Backend/credentials.php";
+							include "../Backend/console.php";
 							$conn = new mysqli($server, $username, $password, $dbname,$port);
                     		try {
                        	 		$sqlGetProduct = 'SELECT * FROM Products';

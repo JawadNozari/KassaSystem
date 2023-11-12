@@ -1,7 +1,7 @@
 <?php 
-    include "../Backend/secret.php";
+    include "../Backend/credentials.php";
     include "../Backend/databaseHandler.php";
-
+    include "../Backend/console.php";
     $conn = mysqli_connect($server, $username, $password, $dbname, $port);
     function register($product_name,$product_info,$expire_date,$pris,$barcode,$antal){
         global $conn;

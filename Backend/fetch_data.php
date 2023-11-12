@@ -1,6 +1,6 @@
   <!-- THIS FILE IS INCLUDED IN 'kassa.php' FOR FINDING AVIAILABLE PRODUCTS-->
   <?php
-    include "../Backend/secret.php";
+    include "../Backend/credentials.php";
     include "../Backend/console.php";
     include "../Backend/databaseHandler.php";
     try {

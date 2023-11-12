@@ -3,7 +3,7 @@
     ini_set('display_errors', '0');
     error_reporting(E_ALL | E_STRICT);
                     
-    include '../Backend/secret.php';
+    include '../Backend/credentials.php';
     include '../Backend/console.php';
     include '../Backend/databaseHandler.php';
     

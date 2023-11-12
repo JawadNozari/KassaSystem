@@ -2,13 +2,10 @@
 	ini_set('display_errors', '0');
 	error_reporting(E_ALL | E_STRICT);
 
-	include "../Backend/secret.php";
-
-	function console($data) {
-		if (!empty($data)) {
-			echo '<script>'.'console.log("%c'.$data.'","color: rgba(215,220,45,100); font-size: 1.5rem; font-weight: light;")'.";</script>";
-		}
-	}				
+	include "../Backend/credentials.php";
+	include '../Backend/databaseHandler.php';
+	include "../Backend/console.php";
+	
 	if(isset($_POST['submit'])){
 		$conn = mysqli_connect($server, $username, $password, $dbname, $port);
 		if (!$conn) {

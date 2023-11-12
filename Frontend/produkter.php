@@ -37,7 +37,7 @@
                     <button name="submit" type="submit" class="btn text-white mt-2 mb-2">Registrera varan</button>
                     
                     <?php
-                        include "../Backend/secret.php";
+                        include "../Backend/credentials.php";
                         $conn = new mysqli($server, $username, $password, $dbname,$port);
                                             
                         //Registering a product
@@ -98,7 +98,7 @@
                     </tr>
                 </thead>
                 <?php
-                    include "../Backend/secret.php";
+                    include "../Backend/credentials.php";
                     try {
                         $sqlGetProduct = 'SELECT * FROM Products';
                         $products= mysqli_query($conn, $sqlGetProduct);

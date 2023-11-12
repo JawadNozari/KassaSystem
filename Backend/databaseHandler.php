@@ -1,7 +1,7 @@
 <?php
     //Include credentials for the entire database. This file is ignored to keep it secret.
-    // include "../Backend/secret.php";
-    // include "../Backend/console.php";
+    include "../Backend/credentials.php";
+    include "../Backend/console.php";
    
     // // Function to register a new admin to AdminTable
     // function RegisterAdmin($username, $password) {
@@ -15,8 +15,6 @@
         
         //create a secure database connection
         public static function dbconnect(){
-            include "../Backend/secret.php";
-            
             try{
                 $connection=mysqli_connect($server, $username, $password, $dbname, $port);
                 if(!$connection){
